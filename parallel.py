@@ -53,6 +53,7 @@ def best_k_words(line):
     :param line: array with incorrect and correct word
     :return: returns k Word objects with the lowest distance to the incorrect word
     """
+    k=10
     wrong_word=line[0].lower()
     all_words=wn.words(lang='eng')
     top_current=[]
@@ -69,6 +70,7 @@ def best_k_words(line):
     return top_current
 
 
+#using multiprocessing to find Lev distances faster
 top_all=[]
 pool=mp.Pool()
 top_all.append(pool.map(best_k_words,birbeck))    
@@ -100,6 +102,7 @@ k1_score=k1_score/word_cnt
 k5_score=k5_score/word_cnt
 k10_score=k10_score/word_cnt
 
-print(k1_score,k5_score,k10_score)
+#print results
+print('s@k=1: ',k1_score, '\ns@k=5: ',k5_score,'\ns@k=10:',k10_score)
 
 
