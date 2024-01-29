@@ -46,10 +46,6 @@ for line in file2:
 file2.close()
 
 
-k=10
-cnt=0
-
-
 
 def best_k_words(line):
     """Calculates the distance between the incorrect spelling and all words in wordnet.
